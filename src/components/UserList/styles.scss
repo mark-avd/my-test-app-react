@@ -1,0 +1,14 @@
+.user-list {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 34px;
+    margin-left: 152px;
+
+    &__header {
+        margin: 0 0 5px 5px;
+    }
+
+    &__footer {
+        align-self: flex-end;
+    }
+}

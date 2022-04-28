@@ -1,0 +1,12 @@
+.button {
+    border: #4b51ef 1px solid;
+    background-color: #4b51ef;
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px 15px;
+
+    &_send {
+        border-color: #52cf4f;
+        background-color: #52cf4f;
+    }
+}
