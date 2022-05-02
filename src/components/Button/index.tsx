@@ -4,7 +4,7 @@ import './styles.scss'
 interface ButtonProps {
     text: string
     type?: 'button' | 'submit' | 'reset'
-    onClick: any
+    onClick?: () => void
     isPrimary?: boolean
     disabled?: boolean
 }

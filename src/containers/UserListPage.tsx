@@ -35,7 +35,12 @@ const UserListPage: React.FC = () => {
     return (
         <PageTemplate
             headerText={'Список пользователей'}
-            sidebar={<Sidebar sortByCity={sortByCity} sortByCompany={sortByCompany} />}
+            sidebar={
+                <Sidebar
+                    sortByCity={sortByCity}
+                    sortByCompany={sortByCompany}
+                />
+            }
         >
             {isLoading ? <LoadingDummy /> : <UserList users={users} />}
         </PageTemplate>

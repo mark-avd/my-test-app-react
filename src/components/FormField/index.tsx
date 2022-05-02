@@ -1,26 +1,23 @@
 import React from 'react'
+import { UseFormRegisterReturn } from 'react-hook-form'
 import './styles.scss'
 
 interface FormFieldProps {
     label: string
     type?: string
-    value?: string
     textarea?: boolean
     readOnly?: boolean
-    onChange: (
-        event:
-            | React.ChangeEvent<HTMLInputElement>
-            | React.ChangeEvent<HTMLTextAreaElement>
-    ) => void
+    register?: UseFormRegisterReturn
+    error?: boolean
 }
 
 const FormField: React.FC<FormFieldProps> = ({
     label,
-    value,
-    onChange,
     readOnly,
     type = 'text',
     textarea = false,
+    register,
+    error,
 }) => {
     return (
         <label className={'form-field'}>
@@ -31,18 +28,20 @@ const FormField: React.FC<FormFieldProps> = ({
                     name={label.toLowerCase()}
                     id={label.toLowerCase()}
                     rows={4}
-                    onChange={onChange}
+                    {...register}
                 />
             ) : (
                 <input
-                    className={'form-field__input'}
+                    className={
+                        error
+                            ? 'form-field__input form-field__input_error'
+                            : 'form-field__input'
+                    }
                     name={label.toLowerCase()}
                     id={label.toLowerCase()}
                     type={type}
-                    value={value}
                     readOnly={readOnly}
-                    onChange={onChange}
-                    required={true}
+                    {...register}
                 />
             )}
         </label>
