@@ -5,8 +5,26 @@
     color: #fff;
     padding: 5px 15px;
 
-    &_send {
-        border-color: #52cf4f;
+    &:active {
+        background-color: #444ad3;
+    }
+
+    &:disabled {
+        background-color: #afafaf;
+        border-color: #afafaf;
+
+        &:active {
+            background-color: #afafaf;
+            border-color: #afafaf;
+        }
+    }
+
+    &_secondary {
         background-color: #52cf4f;
+        border-color: #52cf4f;
+
+        &:active {
+            background-color: #6cec6a;
+        }
     }
 }

@@ -1,0 +1,19 @@
+.page-template {
+    &__sidebar {
+        background-color: #bdbdbd;
+        position: fixed;
+        height: 100vh;
+        width: 152px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 59px 25px 34px;
+        margin-left: 152px;
+    }
+
+    &__content-header {
+        margin: 0 0 16px 5px;
+    }
+}

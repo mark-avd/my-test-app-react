@@ -3,15 +3,25 @@ import './styles.scss'
 
 interface ButtonProps {
     text: string
-    onClick: () => void
-    isPrimary: boolean
+    type?: 'button' | 'submit' | 'reset'
+    onClick: any
+    isPrimary?: boolean
+    disabled?: boolean
 }
 
-const Button: React.FC<ButtonProps> = ({ text, isPrimary, onClick }) => {
+const Button: React.FC<ButtonProps> = ({
+    text,
+    onClick,
+    type = 'button',
+    isPrimary = true,
+    disabled = false,
+}) => {
     return (
         <button
-            className={isPrimary ? 'button' : 'button_send'}
+            className={isPrimary ? 'button' : 'button button_secondary'}
             onClick={onClick}
+            type={type}
+            disabled={disabled}
         >
             {text}
         </button>

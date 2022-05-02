@@ -1,31 +1,27 @@
 import React from 'react'
-import { observer } from 'mobx-react'
-import { store } from '../../stores/store'
-import Icon from '../Icon'
+import UserCard from '../UserCard'
+import { User } from '../../types'
 import './styles.scss'
 
-const UserCard = React.lazy(() => import('../UserCard'))
+interface UserListProps {
+    users?: User[]
+}
 
-const UserList: React.FC = () => {
+const UserList: React.FC<UserListProps> = ({ users }) => {
     return (
-        <div className={'user-list'}>
-            <h4 className={'user-list__header'}>Список пользователей</h4>
-            <React.Suspense fallback={<Icon type={'loading'} />}>
-                {store.users.map((user) => (
-                    <UserCard
-                        key={user.id}
-                        id={user.id}
-                        name={user.name}
-                        city={user.address.city}
-                        company={user.company.name}
-                    />
-                ))}
-            </React.Suspense>
-            <p className={'user-list__footer'}>
-                Найдено {store.users.length} пользователей
-            </p>
-        </div>
+        <>
+            {users?.map((user) => (
+                <UserCard
+                    key={user.id}
+                    id={user.id}
+                    name={user.name}
+                    city={user.address.city}
+                    company={user.company.name}
+                />
+            ))}
+            <p className={'user-list__footer'}>Найдено {users?.length} пользователей</p>
+        </>
     )
 }
 
-export default observer(UserList)
+export default UserList

@@ -1,0 +1,38 @@
+.user-profile-form {
+    border: 1px solid #f3f3f3;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 12px 12px 15px;
+    position: relative;
+
+    &__field,
+    &__textarea {
+        margin: 5px 0;
+        width: 50%;
+    }
+
+    &__textarea {
+        width: 100%;
+    }
+
+    &__edit-button,
+    &__submit-button {
+        position: absolute;
+        right: 0;
+    }
+
+    &__edit-button {
+        top: -40px;
+    }
+
+    &__submit-button {
+        bottom: -40px;
+    }
+
+    &_readonly {
+        input {
+            color: #0000004d;
+        }
+    }
+}

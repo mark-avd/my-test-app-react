@@ -21,3 +21,15 @@ export interface User {
         bs: string
     }
 }
+
+export interface UserProfileForm {
+    name: string
+    username: string
+    city: string
+    email: string
+    phone: string
+    street: string
+    website: string
+    zipcode: string
+    comment?: string
+}

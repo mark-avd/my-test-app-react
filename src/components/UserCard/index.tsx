@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './styles.scss'
 
 interface UserCardProps {
@@ -22,9 +23,9 @@ const UserCard: React.FC<UserCardProps> = ({ id, name, company, city }) => {
                     <span>Компания:</span> {company}
                 </li>
             </ul>
-            <a className={'user-card__link'} href="#">
+            <Link className={'user-card__link'} to={`/${id}`}>
                 Подробнее
-            </a>
+            </Link>
         </div>
     )
 }
