@@ -18,7 +18,10 @@ const UserProfilePage: React.FC = () => {
                 .then(() => setIsLoading(false))
     }, [id])
     return (
-        <PageTemplate headerText={'Профиль пользователя'} sidebar={<Sidebar />}>
+        <PageTemplate
+            headerText={'Профиль пользователя'}
+            sidebar={<Sidebar profile={true} />}
+        >
             {isLoading ? (
                 <LoadingDummy />
             ) : (

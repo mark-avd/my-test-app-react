@@ -5,22 +5,35 @@ import './styles.scss'
 interface SidebarProps {
     sortByCity?: () => void
     sortByCompany?: () => void
+    profile?: boolean
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ sortByCity, sortByCompany }) => {
+const Sidebar: React.FC<SidebarProps> = ({
+    sortByCity,
+    sortByCompany,
+    profile = false,
+}) => {
     return (
         <>
-            <nav className={'sidebar__controls-container'}>
+            <div className={'sidebar__controls-container'}>
                 <div className="sidebar__controls-element">
                     <p>Сортировка</p>
                 </div>
                 <div className="sidebar__controls-element">
-                    <Button text={'по городу'} onClick={sortByCity} />
+                    <Button
+                        text={'по городу'}
+                        onClick={sortByCity}
+                        disabled={profile}
+                    />
                 </div>
                 <div className="sidebar__controls-element">
-                    <Button text={'по компании'} onClick={sortByCompany} />
+                    <Button
+                        text={'по компании'}
+                        onClick={sortByCompany}
+                        disabled={profile}
+                    />
                 </div>
-            </nav>
+            </div>
         </>
     )
 }

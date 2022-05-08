@@ -3,6 +3,7 @@
     background-color: #4b51ef;
     border-radius: 5px;
     color: #fff;
+    cursor: pointer;
     padding: 5px 15px;
 
     &:active {
@@ -12,6 +13,7 @@
     &:disabled {
         background-color: #afafaf;
         border-color: #afafaf;
+        cursor: auto;
 
         &:active {
             background-color: #afafaf;
