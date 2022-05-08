@@ -130,6 +130,7 @@ const UserProfile: React.FC<UserProfileFormProps> = ({
             <div className={'user-profile-form__textarea'}>
                 <FormField
                     label={'Comment'}
+                    readOnly={readOnly}
                     textarea={true}
                     register={register('comment')}
                 />

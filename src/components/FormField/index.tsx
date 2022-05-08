@@ -28,6 +28,7 @@ const FormField: React.FC<FormFieldProps> = ({
                     name={label.toLowerCase()}
                     id={label.toLowerCase()}
                     rows={4}
+                    readOnly={readOnly}
                     {...register}
                 />
             ) : (

@@ -29,5 +29,9 @@
     &__link {
         align-self: flex-end;
         text-decoration: none;
+
+        &:visited {
+            color: #4b51ef;
+        }
     }
 }

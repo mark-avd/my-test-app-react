@@ -11,10 +11,17 @@
 # production
 /build
 
-# misc
+# Firebase Hosting
 .firebaserc
+firebase-debug.log
+
+# ESlint cache
 .eslintcache
+
+# Webstorm cache
 .idea
+
+# misc
 .DS_Store
 .env.local
 .env.development.local
